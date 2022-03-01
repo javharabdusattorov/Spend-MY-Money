@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spend MY Money</title>
+    <link rel="icon" href="img/money vector.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <header class="container mt-3">
+        <div class="row">
+            <div class="header">
+                <div class="header__img">
+                    <img class="me" src="img/ME.jpg" alt="">
+                    <h1 class="my__title">Spend Javhars' Money</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container sticky-top mt-3">
+        <div class="row">
+            <div class="header__money">
+                <h2 class="result__money"></h2>
+            </div>
+        </div>
+    </div>
+
+    <section class="products mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 main__product" id="cocaCola">
+                    <img class="product__img cola" src="img/cola.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title mt-5">Coca Cola</h4>
+                        <p class="product__text">$2</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product" id="bigBurger">
+                    <img class="product__img" src="img/burger.jpg" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Big Mac</h4>
+                        <p class="product__text">$5</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product" id="lavash">
+                    <img class="product__img lavash" src="img/lavash.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Big Lavash</h4>
+                        <p class="product__text">$8</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="bellisimoPizza">
+                    <img class="product__img belissimo" src="img/bellisimo.jpeg" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title mt-5">Belissimo PIZZA</h4>
+                        <p class="product__text">$12</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="plov">
+                    <img class="product__img plov" src="img/beshqozon.jfif" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Plov of Beshqozon</h4>
+                        <p class="product__text">$20</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="lobsterDinner">
+                    <img class="product__img plov" src="img/lobster-dinner.jpg" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Lobster Dinner</h4>
+                        <p class="product__text">$35</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="cap">
+                    <img class="product__img palm cap" src="img/cap.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Cap</h4>
+                        <p class="product__text">$40</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="nikeShoes">
+                    <img class="product__img palm nike__shoes" src="img/nike shoes.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Nike Shoes</h4>
+                        <p class="product__text">$50</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="palmAngels">
+                    <img class="product__img palm" src="img/palm angels.jpg" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Palm Angels</h4>
+                        <p class="product__text">$60</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="skate">
+                    <img class="product__img skate" src="img/skate.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Skate</h4>
+                        <p class="product__text">$65</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="roller">
+                    <img class="product__img roller" src="img/roller.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Roller</h4>
+                        <p class="product__text">$80</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="bike">
+                    <img class="product__img bike" src="img/bikePNG.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Bike</h4>
+                        <p class="product__text">$100</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="smartWatch">
+                    <img class="product__img bike" src="img/smart Watch.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Apple Smart watch</h4>
+                        <p class="product__text">$150</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="handClock">
+                    <img class="product__img clock" src="img/hand clock.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Hand Clock</h4>
+                        <p class="product__text">$200</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="airpods">
+                    <img class="product__img airpods" src="img/airpods.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Apple Airpods</h4>
+                        <p class="product__text">$250</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="tennisBall">
+                    <img class="product__img palm" src="img/tennis ball.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Tennis Ball</h4>
+                        <p class="product__text">$400</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="fifaBall">
+                    <img class="product__img plov" src="img/fifa ball.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Nike Team FIFA ball</h4>
+                        <p class="product__text">$500</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="basketball">
+                    <img class="product__img palm" src="img/basketball.jpg" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">NBA Team</h4>
+                        <p class="product__text">$1.000</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="iphoneProMax">
+                    <img class="product__img palm mt-4" src="img/iphone 13pro max.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Apple Iphone 13 Pro max</h4>
+                        <p class="product__text">$1.300</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="carJentra">
+                    <img class="product__img car" src="img/jentra.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Jentra</h4>
+                        <p class="product__text">$13.000</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="carMalibu">
+                    <img class="product__img car" src="img/malibu 2.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">Malibu 2 TURBO</h4>
+                        <p class="product__text">$20.000</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 main__product mt-2" id="plane">
+                    <img class="product__img car" src="img/plane.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">PLANE</h4>
+                        <p class="product__text">$200.000.000</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="helicopter">
+                    <img class="product__img car" src="img/helicopter.png" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">HELICOPTER</h4>
+                        <p class="product__text">$300.000.000</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 main__product mt-2" id="villa">
+                    <img class="product__img nike__shoes" src="img/villa.jpg" alt="">
+
+                    <div class="product__bottoms">
+                        <h4 class="product__title">VILLA</h4>
+                        <p class="product__text">$1.000.000.000</p>
+                        <div class="product__counter">
+                            <button id="main__product-btn" data-symbol="-">Sell</button>
+                            <div class="counter">
+                                0
+                            </div>
+                            <button id="main__product-btn" data-symbol="+">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/scrict.js"></script>
+</body>
+
+</html>

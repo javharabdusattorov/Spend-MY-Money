@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none !important;
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+}
+
+body {
+    background-color: #f1f2f6;
+}
+
+/* header-start */
+
+.header {
+    background-color: white;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__img {
+    text-align: center;
+}
+
+.my__title {
+    font-size: 40px;
+    color: crimson;
+    margin-top: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.me {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header__money {
+    top: 0;
+    background: linear-gradient(to top, rgb(13, 156, 13), rgb(25, 189, 25));
+    padding: 18px 0;
+    margin: 0 auto;
+}
+
+.result__money {
+    font-size: 40px;
+    color: aliceblue;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* header-end */
+
+/* **************************************** */
+
+/* PRODUCTS-start */
+
+.main__product {
+    background: white;
+    padding: 25px 8px 0 8px;
+    text-align: center;
+    height: 400px;
+    position: relative;
+}
+
+.product__img {
+    max-width: 130px;
+    min-width: 130px;
+    margin: auto;
+}
+
+.cola {
+    margin-top: 60px;
+}
+
+.lavash {
+    max-width: 200px;
+    min-width: 130px;
+}
+
+.belissimo {
+    max-width: 300px;
+    border-radius: 3px;
+}
+
+.palm {
+    max-width: 200px;
+    border-radius: 3px;
+}
+
+.plov {
+    max-width: 300px;
+    border-radius: 3px;
+}
+
+.nike__shoes {
+    max-width: 300px;
+    border-radius: 3px;
+}
+
+.cap {
+    max-width: 250px;
+}
+
+.skate {
+    max-width: 230px;
+    margin-top: 45px;
+}
+
+.roller {
+    max-width: 230px;
+}
+
+.bike {
+    max-width: 250px;
+    margin-bottom: 50px;
+}
+
+.airpods {
+    max-width: 280px;
+}
+
+.car {
+    max-width: 375px;
+}
+
+.product__title {
+    font-size: 26px;
+    color: black;
+    margin-bottom: 0;
+}
+
+.product__text {
+    font-size: 22px;
+    color: yellowgreen;
+    margin-top: 2px;
+    letter-spacing: 1px;
+}
+
+.product__bottoms {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.product__counter {
+    display: flex;
+    align-items: center;
+}
+
+#main__product-btn[data-symbol="-"] {
+    font-size: 16px;
+    color: black;
+    padding: 10px 35px;
+    background: #f1f2f6;
+    margin-right: 3px;
+    border: none;
+}
+
+.counter {
+    font-size: 16px;
+    color: black;
+    padding: 9px 35px;
+    background: white;
+    margin-right: 3px;
+    border: 1px solid rgba(116, 115, 115, 0.877);
+}
+
+#main__product-btn[data-symbol="+"] {
+    font-size: 16px;
+    color: white;
+    padding: 8px 35px 10px 35px;
+    background: linear-gradient(
+        180deg,#2ecc71,#1abc9c);
+    margin-right: 3px;
+    border: none;
+    transition: 0.3s;
+}
+
+.main__product-btn[data-symbol="+"]:hover {
+    background: linear-gradient(
+        360deg,#2ecc71,#1abc9c);
+}
