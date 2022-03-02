@@ -59,6 +59,10 @@ body {
 
 /* PRODUCTS-start */
 
+.products {
+    margin-bottom: 50px;
+}
+
 .main__product {
     background: white;
     padding: 25px 8px 0 8px;
@@ -160,6 +164,7 @@ body {
     background: #f1f2f6;
     margin-right: 3px;
     border: none;
+    border-radius: 4px;
 }
 
 .counter {
@@ -169,6 +174,7 @@ body {
     background: white;
     margin-right: 3px;
     border: 1px solid rgba(116, 115, 115, 0.877);
+    border-radius: 4px;
 }
 
 #main__product-btn[data-symbol="+"] {
@@ -180,9 +186,79 @@ body {
     margin-right: 3px;
     border: none;
     transition: 0.3s;
+    border-radius: 4px;
 }
 
 .main__product-btn[data-symbol="+"]:hover {
     background: linear-gradient(
         360deg,#2ecc71,#1abc9c);
 }
+
+/* RECEIPT-start */
+
+.receipt__container {
+    background-color: white;
+    padding: 20px 0 18px 0;
+    display: none;
+}
+
+.receipt__title {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.product__box-C-P {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 25px;
+    padding-right: 59px;
+}
+
+.product__name {
+    font-size: 22px;
+    width: 150px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.product__counterEnd {
+    font-size: 18px;
+    width: 60px;
+    font-weight: 600;
+}
+
+.product__price {
+    font-size: 18px;
+    color: #24c486;
+    width: 70px;
+    font-weight: 600;
+}
+
+.total__box {
+    border-top: 1.52px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0 auto;
+}
+
+.total__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 5px;
+    width: 190px;
+    text-align: left;
+}
+
+.total__price {
+    font-size: 18px;
+    color: #24c486;
+    font-weight: 600;
+    width: 110px;
+    text-align: right;
+}
+
+/* RECEIPT-end */
