@@ -231,7 +231,6 @@ let product = {
     }
 }
 
-
 const order = {
     products: {
         cocaCola: 0,
@@ -261,7 +260,7 @@ const order = {
     },
 
     get total() {
-     return this.products.cocaCola +
+        return this.products.cocaCola +
             this.products.bigBurger +
             this.products.lavash +
             this.products.bellisimoPizza +
@@ -306,7 +305,6 @@ function calculateOrderPrice() {
     order.products.cap = product.cap.summ;
     order.products.nikeShoes = product.nikeShoes.summ;
     order.products.palmAngels = product.palmAngels.summ;
-    order.products.palmAngels = product.palmAngels.summ;
     order.products.skate = product.skate.summ;
     order.products.roller = product.roller.summ;
     order.products.bike = product.bike.summ;
@@ -341,65 +339,32 @@ function buyOrSell(element) {
     if (action == '+' && productAmount < 100) {
         if (myMoney == 0) return alert("Pulingiz yo'qku!!!");
 
-        calculateOrderPrice();
-        renderOrderPrice();
-
         product[productID].amount++;
         buyProduct(product[productID].price);
 
-        // Receipt 
-        elReceiptContainer.style.display = 'block';
+        calculateOrderPrice();
+        renderOrderPrice();
 
-        // All 'li'
-        let elProductsBoxLi = document.createElement('li');
-        elProductsBoxLi.setAttribute('class', 'product__box-C-P');
-        elProductTotal.appendChild(elProductsBoxLi);
-
-        // Elements inside 'li':
-        let elProductName = document.createElement('p');
-        elProductName.setAttribute('class', 'product__name');
-        elProductsBoxLi.appendChild(elProductName);
-        elProductName.innerHTML = productName;
-
-        let elProductCounter = document.createElement('p');
-        elProductCounter.setAttribute('class', 'product__counterEnd');
-        elProductsBoxLi.appendChild(elProductCounter);
-        elProductCounter.innerHTML = `x${productAmount + 1}`;
-
-        let elProductPrice = document.createElement('p');
-        elProductPrice.setAttribute('class', 'product__price');
-        elProductsBoxLi.appendChild(elProductPrice);
-        elProductPrice.innerHTML = `$${productPrice}`;
-
+        addProductToReceipt(
+            productID,
+            productName,
+            product[productID].amount,
+            productPrice,
+        )
     }
 
     else if (action == '-' && productAmount > 0) {
         product[productID].amount--;
         sellProduct(product[productID].price);
 
-                // Receipt 
-                elReceiptContainer.style.display = 'block';
+        calculateOrderPrice();
+        renderOrderPrice();
 
-                // All 'li'
-                let elProductsBoxLi = document.createElement('li');
-                elProductsBoxLi.removeAttribute('class', 'product__box-C-P');
-                elProductTotal.removeChild(elProductsBoxLi);
-        
-                // Elements inside 'li':
-                let elProductName = document.createElement('p');
-                elProductName.removeAttribute('class', 'product__name');
-                elProductsBoxLi.removeChild(elProductName);
-                elProductName.innerHTML = productName;
-        
-                let elProductCounter = document.createElement('p');
-                elProductCounter.removeAttribute('class', 'product__counterEnd');
-                elProductsBoxLi.removeChild(elProductCounter);
-                elProductCounter.innerHTML = `$${product[productID].amount--}`;
-        
-                let elProductPrice = document.createElement('p');
-                elProductPrice.removeAttribute('class', 'product__price');
-                elProductsBoxLi.removeChild(elProductPrice);
-                elProductPrice.innerHTML = `$${productPrice}`;
+        removeProductToReceipt(
+            productID,
+            product[productID].amount,
+            productPrice,
+        );
     }
 
     count.innerHTML = product[productID].amount;
@@ -413,4 +378,49 @@ function buyProduct(price) {
 function sellProduct(price) {
     myMoney = (myMoney + price);
     elMyMoney.innerHTML = `$ ${(new Intl.NumberFormat().format(myMoney))}`;
+}
+
+function addProductToReceipt(id, name, amount, price) {
+    // Receipt 
+    elReceiptContainer.style.display = 'block';
+
+    const isAlreadyInReceipt = elProductTotal.querySelector(`[data-product-id=${id}]`);
+    if (isAlreadyInReceipt) {
+        isAlreadyInReceipt.querySelector(".product__counterEnd").innerHTML = `x${amount}`;
+        isAlreadyInReceipt.querySelector(".product__price").innerHTML = `$${price}`;
+        return
+    }
+
+    // All 'li'
+    let elProductsBoxLi = document.createElement('li');
+    elProductsBoxLi.setAttribute('class', 'product__box-C-P');
+    elProductsBoxLi.setAttribute('data-product-id', id);
+    elProductTotal.appendChild(elProductsBoxLi);
+
+    // Elements inside 'li':
+    let elProductName = document.createElement('p');
+    elProductName.setAttribute('class', 'product__name');
+    elProductsBoxLi.appendChild(elProductName);
+    elProductName.innerHTML = name;
+
+    let elProductCounter = document.createElement('p');
+    elProductCounter.setAttribute('class', 'product__counterEnd');
+    elProductsBoxLi.appendChild(elProductCounter);
+    elProductCounter.innerHTML = `x${amount}`;
+
+    let elProductPrice = document.createElement('p');
+    elProductPrice.setAttribute('class', 'product__price');
+    elProductsBoxLi.appendChild(elProductPrice);
+    elProductPrice.innerHTML = `$${price}`;
+
+};
+
+function removeProductToReceipt(id, amount, price) {
+
+    const isAlreadyInReceipt = elProductTotal.querySelector(`[data-product-id=${id}]`)
+    if (isAlreadyInReceipt) {
+        isAlreadyInReceipt.querySelector(".product__counterEnd").innerHTML = `x${amount}`
+        isAlreadyInReceipt.querySelector(".product__price").innerHTML = `$${price}`
+        return
+    }
 }
