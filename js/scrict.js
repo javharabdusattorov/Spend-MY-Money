@@ -50,7 +50,7 @@ let product = {
     },
 
     plov: {
-        name: 'Plov of Beshqozon',
+        name: 'Beshqozon Plov ',
         price: 20,
         amount: 0,
         get summ() {
@@ -122,7 +122,7 @@ let product = {
     },
 
     smartWatch: {
-        name: 'Apple Smart Watch',
+        name: 'Smart Watch',
         price: 150,
         amount: 0,
         get summ() {
@@ -158,7 +158,7 @@ let product = {
     },
 
     fifaBall: {
-        name: 'Nike Team FIFA ball',
+        name: 'FIFA ball',
         price: 500,
         amount: 0,
         get summ() {
@@ -176,8 +176,8 @@ let product = {
     },
 
     iphoneProMax: {
-        name: 'Iphone 13 Pro max',
-        price: 80,
+        name: 'Iphone 13Pro M',
+        price: 1300,
         amount: 0,
         get summ() {
             return this.price * this.amount
@@ -229,8 +229,8 @@ let product = {
             return this.price * this.amount
         }
     }
-
 }
+
 
 const order = {
     products: {
@@ -288,7 +288,6 @@ const order = {
     }
 }
 
-
 // BUTTONS + -
 for (let i = 0; i < elBtnPluseOrMinuse.length; i++) {
     elBtnPluseOrMinuse[i].addEventListener('click', function () {
@@ -327,10 +326,8 @@ function calculateOrderPrice() {
 
 // Render order price:
 function renderOrderPrice() {
-    elResultTotalPrice.innerHTML = order.total;
-    console.log(order.total);
+    elResultTotalPrice.innerHTML = `$${order.total}`;
 }
-
 
 // + i -
 function buyOrSell(element) {
@@ -344,8 +341,8 @@ function buyOrSell(element) {
     if (action == '+' && productAmount < 100) {
         if (myMoney == 0) return alert("Pulingiz yo'qku!!!");
 
-        renderOrderPrice();
         calculateOrderPrice();
+        renderOrderPrice();
 
         product[productID].amount++;
         buyProduct(product[productID].price);
@@ -368,25 +365,41 @@ function buyOrSell(element) {
         elProductCounter.setAttribute('class', 'product__counterEnd');
         elProductsBoxLi.appendChild(elProductCounter);
         elProductCounter.innerHTML = `x${productAmount + 1}`;
-        if (elProductCounter > 1) {
-            elProductsBoxLi.appendChild();
-        }
 
         let elProductPrice = document.createElement('p');
         elProductPrice.setAttribute('class', 'product__price');
         elProductsBoxLi.appendChild(elProductPrice);
         elProductPrice.innerHTML = `$${productPrice}`;
 
-        if (productName === 2) {
-            productAmount++;
-        }
     }
 
     else if (action == '-' && productAmount > 0) {
         product[productID].amount--;
         sellProduct(product[productID].price);
 
-        elReceiptContainer.style.display = 'none';
+                // Receipt 
+                elReceiptContainer.style.display = 'block';
+
+                // All 'li'
+                let elProductsBoxLi = document.createElement('li');
+                elProductsBoxLi.removeAttribute('class', 'product__box-C-P');
+                elProductTotal.removeChild(elProductsBoxLi);
+        
+                // Elements inside 'li':
+                let elProductName = document.createElement('p');
+                elProductName.removeAttribute('class', 'product__name');
+                elProductsBoxLi.removeChild(elProductName);
+                elProductName.innerHTML = productName;
+        
+                let elProductCounter = document.createElement('p');
+                elProductCounter.removeAttribute('class', 'product__counterEnd');
+                elProductsBoxLi.removeChild(elProductCounter);
+                elProductCounter.innerHTML = `$${product[productID].amount--}`;
+        
+                let elProductPrice = document.createElement('p');
+                elProductPrice.removeAttribute('class', 'product__price');
+                elProductsBoxLi.removeChild(elProductPrice);
+                elProductPrice.innerHTML = `$${productPrice}`;
     }
 
     count.innerHTML = product[productID].amount;

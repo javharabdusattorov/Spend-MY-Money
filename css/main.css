@@ -213,13 +213,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: baseline;
-    height: 25px;
+    height: 30px;
     padding-right: 59px;
 }
 
 .product__name {
-    font-size: 22px;
-    width: 150px;
+    font-size: 20px;
+    width: 160px;
     font-weight: 500;
     text-align: left;
 }
@@ -228,6 +228,7 @@ body {
     font-size: 18px;
     width: 60px;
     font-weight: 600;
+    text-align: left;
 }
 
 .product__price {
@@ -235,6 +236,7 @@ body {
     color: #24c486;
     width: 70px;
     font-weight: 600;
+    text-align: left;
 }
 
 .total__box {
@@ -246,7 +248,7 @@ body {
 }
 
 .total__title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     margin-top: 5px;
     width: 190px;
@@ -259,6 +261,11 @@ body {
     font-weight: 600;
     width: 110px;
     text-align: right;
+    padding-right: 10px;
+}
+
+.none {
+    display: none;
 }
 
 /* RECEIPT-end */
